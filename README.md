@@ -96,7 +96,7 @@ Ninja 仅支持 qinglong 2.8.2+
 2. 进容器内执行以下命令
 
    **进容器内执行以下命令**
-
+docker exec -it qinglong bash
    ```bash
    git clone https://github.com/LHZ-922/ninja.git /ql/ninja
    cd /ql/ninja/backend
