@@ -93,10 +93,13 @@ Ninja 仅支持 qinglong 2.8.2+
      whyour/qinglong:latest
    ```
 
-2. 进容器内执行以下命令
 
-   **进容器内执行以下命令**
-docker exec -it qinglong bash
+
+## 进容器内执行以下命令
+ ```bash
+   docker exec -it qinglong bash
+   ```
+2. 进容器内执行以下命令
    ```bash
    git clone https://github.com/LHZ-922/ninja.git /ql/ninja
    cd /ql/ninja/backend
@@ -208,4 +211,26 @@ cd /ql/ninja
 pm2 delete ninja
 rm -rf *
 rm -r ./.*
+```
+## 依赖库修复
+```bash
+cd && docker exec -it qinglong bash -c "apk add --no-cache build-base g++ cairo-dev pango-dev giflib-dev && cd scripts && npm install canvas --build-from-source"
+```
+## 适用于JDHelloWorld的宠汪汪二代目和宠汪汪兑奖品二代目
+```bash
+docker exec -it qinglong bash -c "cd scripts && npm i -S png-js"
+```
+## 全部依赖
+```bash
+docker exec -it qinglong bash -c "npm install -g typescript"
+docker exec -it qinglong bash -c "npm install axios date-fns"
+docker exec -it qinglong bash -c "npm install crypto -g"
+docker exec -it qinglong bash -c "npm install jsdom"
+docker exec -it qinglong bash -c "npm install png-js"
+docker exec -it qinglong bash -c "npm install -g npm"
+docker exec -it qinglong bash -c "pnpm i png-js"
+docker exec -it qinglong bash -c "pip3 install requests"
+docker exec -it qinglong bash -c "apk add --no-cache build-base g++ cairo-dev pango-dev giflib-dev && cd scripts && npm install canvas --build-from-source"
+docker exec -it qinglong bash -c "apk add python3 zlib-dev gcc jpeg-dev python3-dev musl-dev freetype-dev"
+docker exec -it qinglong bash -c "cd /ql/scripts/ && apk add --no-cache build-base g++ cairo-dev pango-dev giflib-dev && npm i && npm i -S ts-node typescript @types/node date-fns axios png-js canvas --build-from-source"
 ```
