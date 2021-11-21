@@ -215,6 +215,8 @@ rm -r ./.*
 ## 依赖库修复
 ```bash
 cd && docker exec -it qinglong bash -c "apk add --no-cache build-base g++ cairo-dev pango-dev giflib-dev && cd scripts && npm install canvas --build-from-source"
+docker exec -it qinglong bash
+curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/shufflewzc/QLDependency/main/Shell/QLOneKeyDependency.sh | sh
 ```
 ## 适用于JDHelloWorld的宠汪汪二代目和宠汪汪兑奖品二代目
 ```bash
